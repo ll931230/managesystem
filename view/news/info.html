@@ -1,0 +1,23 @@
+<div class="app-news-info">
+	<div class="app-inner">
+		<h1>新闻详情</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 t-r">新闻标题：</div>
+				<div class="col-lg-8">{{data.title}}</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 t-r">新闻作者：</div>
+				<div class="col-lg-8">{{data.writer}}</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 t-r">新闻日期：</div>
+				<div class="col-lg-8">{{data.date | date : 'yyyy-MM-dd HH:mm:ss'}}</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 t-r">新闻内容：</div>
+				<div class="col-lg-8">{{data.content}}</div>
+			</div>
+		</div>
+	</div>
+</div>

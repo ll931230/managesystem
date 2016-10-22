@@ -1,0 +1,67 @@
+<div class="app-user-create">
+	<div class="app-inner">
+		<h1>创建用户</h1>
+		<form class="container" name="userForm" ng-submit="submitData()">
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="user_name">用户名：</label>
+				</div>
+				<div class="col-lg-6">
+					<input type="text" id="user_name" ng-model="user.username" name="username" placeholder="请输入您的昵称" ng-required="true">
+				</div>
+				<div class="col-lg-3">
+					<span class="text-danger" ng-show="userForm.username.$dirty && userForm.username.$invalid">用户名是必填的</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="pass_word">密&emsp;码：</label>
+				</div>
+				<div class="col-lg-6">
+					<input type="text" id="pass_word" ng-model="user.password" name="password" placeholder="请输入用户密码" ng-required="true">
+				</div>
+				<div class="col-lg-3">
+					<span class="text-danger" ng-show="userForm.password.$dirty && userForm.password.$invalid">用户密码必填</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="tel">电&emsp;话：</label>
+				</div>
+				<div class="col-lg-6">
+					<input type="text" id="tel" ng-model="user.tel" name="tel" placeholder="请输入电话号码" ng-pattern="/^1\d{10}$/">
+				</div>
+				<div class="col-lg-3">
+					<span class="text-danger" ng-show="userForm.tel.$dirty && userForm.tel.$invalid">电话号码是以1开头11为数字</span>
+				</div>
+			</div>
+			<!-- 创建性别 -->
+			<div class="row">
+				<div class="col-lg-3">
+					<label>性&emsp;别：</label>
+				</div>
+				<div class="col-lg-6 form-radio">
+					<label>男：<input type="radio" value="man" ng-model="user.sex"></label>
+					<label>女：<input type="radio" value="women" ng-model="user.sex"></label>
+				</div>
+			</div>
+			<!-- 简介 -->
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="info">简&emsp;介：</label>
+				</div>
+				<div class="col-lg-6">
+					<textarea id="info" ng-model="user.info" placeholder="请输入用户简介"  name="info" ng-required="true"></textarea>
+				</div>
+				<div class="col-lg-3">
+					<span class="text-danger" ng-show="userForm.info.$dirty && userForm.info.$invalid">简介是必填的</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<button ng-disabled="userForm.$invalid" type="submit" class="btn btn-success">提交</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我们的后台系统</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+<div ng-app="app" ng-style="{display: isShow}" class="app">
+	<header class="header">
+		<div class="container">
+			<div class="right">
+				<span>你好，欢迎回来！</span>
+				<span>{{username}}</span>
+				|
+				<a href="action/logout.php">退出</a>
+			</div>
+			<h1>我的后台管理系统</h1>
+		</div>
+	</header>
+	<div class="nav" ng-controller="navCtrl">
+		<ul>
+			<li ng-repeat="item in list">
+				<h3>{{item.title}}</h3>
+				<!-- 循环字列表还需要循环指令 -->
+				<ul>
+					<li ng-repeat="childItem in item.childList">
+						<a ng-href="{{childItem.link}}">{{childItem.title}}</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="main" ng-view></div>
+</div>
+<!-- 引入js -->
+<script type="text/javascript" src="js/angular-1-4-1.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
